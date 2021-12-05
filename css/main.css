@@ -1,0 +1,738 @@
+/*Importamos el tipo de letra */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+/*Importamos iconos */
+@import url("fontawesome-all.min.css");
+
+/*Estilo general de la página */
+
+
+	html {
+		height: 100%;
+	}
+
+	html {
+		box-sizing: border-box;
+	}
+
+
+	body {
+		background: #ffffff;
+		height: 100%;
+		min-width: 320px;
+	}
+
+
+
+	body {
+		text-decoration: none;
+	}
+
+/* Estilos de tipografía para toda la web */
+
+    /*Incluimos media queries para el texto según ancho para que el diseño sea fluid    */
+
+    @media screen and (max-width: 1920px) {
+
+	body, input, textarea, select {
+		font-size: 17pt;
+	}
+
+    }
+
+    @media screen and (max-width: 1680px) {
+
+	body, input, textarea, select {
+		font-size: 15pt;
+	}
+
+    }
+
+    @media screen and (max-width: 1280px) {
+
+	body, input, textarea, select {
+		font-size: 13pt;
+	}
+
+    }
+
+    @media screen and (max-width: 1000px) {
+
+	body, input, textarea, select {
+		font-size: 13pt;
+	}
+
+    }
+
+    @media screen and (max-width: 736px) {
+
+	body, input, textarea, select {
+		font-size: 12pt;
+		line-height: 1.5em;
+	}
+
+    }
+	@media screen and (max-width: 736px) {
+
+		h2 {
+			font-size: 1.5em;
+		}
+
+	}
+
+
+
+
+	body, input, textarea {
+		font-family: "Caveat", "cursive";
+		font-weight: 300;
+		font-size: 20pt;
+		line-height: 1.75em;
+		color: #2d3438;
+		letter-spacing: 0.025em;
+	}
+
+
+		
+	h1, h2 {
+		font-weight: 900;
+		color: inherit;
+		letter-spacing: -0.0325em;
+	}
+
+		h1 a, h2 a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+	h2 {
+		font-size: 2 em;
+		line-height: 1.25em;
+		letter-spacing: -0.05em;
+	}
+
+
+/* Estilo para box modelo de cajas*/
+
+	.box {
+		background:none;
+		color: #39454b;
+		padding: 2em;
+	}
+
+
+/* Estilo general para header */
+
+header {
+	margin-bottom: 1em;
+}
+
+	header p {
+		
+		display: block;
+		margin: 1em 0 0 0;
+		padding: 0 0 0.5em 0;
+	}
+
+footer {
+	margin-top: 2em;
+}
+
+/*Estilos para header y elementos de header (h1,nav, ul, il, a) */
+
+#header {
+	/* Indicamos un z-index alto en el header para que aparezca por encima de todo el contenido de las secciones*/
+	z-index: 5;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background: rgba(255, 255, 255, 0.95);
+	height: 3em;
+	line-height: 3em;
+	box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+	
+}
+#header h1 {
+	position: absolute;
+	left: 1em;
+	top: 0;
+	height: 3em;
+	line-height: 3em;
+	cursor: default;
+	padding-left: 20px;
+}
+
+#header img {
+	width: 40px;
+	height: auto;
+	margin:5px;
+}
+
+	#header nav {
+		z-index: 1;
+		position: absolute;
+		right: 0.5em;
+		top: 0;
+		height: 5em;
+		line-height: 3em;
+		margin-left: 6em;
+		font-size: 1em;
+		display: inline-block;
+	}
+
+		#header nav ul {
+			margin: 0;
+		}
+
+			#header nav ul li {
+				display: inline-block;
+				
+
+			}
+
+				#header nav ul li a {
+					
+					display: block;
+					color: inherit;
+					text-decoration: none;
+					font-weight: 900;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 0.5em 0 0.5em;
+					outline: 0;
+				}
+
+
+                /* Usamos media queries para el header según ancho de pantalla para que el diseño sea fluid , una vez la
+				pantalla se hace demasiado pequeña el menú de navegación y el icono desaparecen y la etiqueta h1 se centra   */ 
+				@media screen and (max-width: 736px) {
+
+					#header {
+						height: 2.5em;
+						line-height: 2.5em;
+					}
+		
+						#header h1 {
+							text-align: center;
+							position: relative;
+							left: 0;
+							top: 0;
+							height: 2.5em;
+							line-height: 2.5em;
+						}
+		
+							#header a {
+								display: none;
+							}
+
+		
+						    #header nav {
+							display: none;
+						    }
+						
+
+
+
+						
+				}
+
+body {
+	padding-top: 3em;
+}
+
+
+/* Estilo general de secciones y contenido de secciones */
+
+.section {
+	/*Se usa la propiedad flex para que los elementos se alineen en una sola fila,
+	 usando el tamaño del contenedor (section) como su tamaño en el eje principal*/
+	display: flex;
+	position: relative;
+	margin: 0;
+}
+    /*Usamos % en las seciones para que el diseño sea fluid  */ 
+	.section > .content {
+		width: 75%;
+		max-width: calc(100% - 4em);
+		margin: 5%;
+	}
+
+	
+
+
+/* Estilos para footer */
+
+#footer {
+
+	/*Se utilizan las propiedades de flex para el display del footer */
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	-moz-align-items: center;
+	-webkit-align-items: center;
+	-ms-align-items: center;
+	align-items: center;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	margin: 0;
+	line-height: 1em;
+	padding: 1.5em;
+	background: #39454b;
+	color: rgba(185, 186, 187, 0.5);
+	overflow: hidden;
+}
+
+	#footer > * {
+		margin-bottom: 0;
+	}
+
+	#footer a {
+		color: inherit;
+	}
+
+		#footer a:hover {
+			color: #b9babb;
+		}
+
+	#footer ul.menu {
+		margin: 0;
+	}
+
+		#footer ul.menu li {
+			border-left-color: rgba(185, 186, 187, 0.2);
+			font-size: 0.9em;
+			text-decoration:none;;
+		}
+     /* Usamos media queries para el footer según ancho de pantalla para que el diseño sea fluid     */ 
+
+		@media screen and (max-width: 1000px) {
+
+			#footer {
+				-moz-flex-direction: column;
+				-webkit-flex-direction: column;
+				-ms-flex-direction: column;
+				flex-direction: column;
+				-moz-justify-content: center;
+				-webkit-justify-content: center;
+				-ms-justify-content: center;
+				justify-content: center;
+				line-height: 1.5em;
+				text-align: center;
+				padding: 2em 1em 2em 1em;
+			}
+
+				#footer > * {
+					margin: 0 0 1em 0;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#footer ul.menu li {
+				border-left: none;
+				display: block;
+				line-height: inherit;
+				margin: 0.25em 0 0 0;
+				padding: 0.25em 0 0 0;
+			}
+
+				#footer ul.menu li:first-child {
+					margin-top: 0;
+					padding-top: 0;
+				}
+
+		}
+
+
+
+/* Estilos específicos para la primera sección ( #quien) */
+
+#quien {
+	background-color:#7d7a81;
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+	color: #ffffff;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 3em 0 3em 0;
+	
+
+}
+#quien h2{
+	font-size: 4.25em;
+	line-height: 1em;
+}
+#quien img{
+	border-radius:15px;
+	width: 350px;
+	height: auto;
+}
+
+
+/* Estilos específicos para la segunda sección ( #que)  */
+
+#que {
+	background-color:#D3804D;
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+	color: #ffffff;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 3em 0 3em 0;
+
+}
+
+#que h2{
+	font-size: 4.25em;
+	line-height: 1em;
+}
+
+#que ul{
+	padding: 2em;
+}
+
+/* Container para Skills */
+.content-skills {
+	/* Especificando el ancho en % permitimos que el diseño sea fluid   */
+width: 90%; /* Ancho*/
+background-color: #D3804D; /* Color de fondo */
+text-align: left;
+}
+
+.skills {
+text-align: right; /* alinear el texto a la derecha */
+padding-top: 5px; /* Se añade padding superior */
+padding-bottom: 5px; /* Se añade padding inferior */
+padding-right:2px; /* Se añade padding a la derecha*/
+color: white; /* Texto de color blanco*/
+border-radius: 8px; /* Bordes redondeados*/
+}
+	/* Especificando el ancho en % permitimos que el diseño sea fluid   */
+
+.sig {width: 90%; background-color: #B65D3A;} /* Propiedades para SIG */
+.html {width: 70%; background-color: #B65D3A;} /* Propiedades para HTML */
+.css {width: 50%; background-color: #B65D3A} /* Propiedades para CSS */
+.js {width: 35%; background-color: #B65D3A;} /* Propiedades para JS */
+
+/* Estilos específicos para la tercera sección ( #trabajos)  */
+
+#trabajo {
+	background-color: #B65D3A;
+	background-size: 256px 256px, cover;
+	background-attachment: fixed, fixed;
+	background-position: top left, center center;
+	color: #ffffff;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 3em 0 3em 0;
+
+}
+
+#trabajo h2{
+	font-size: 2em;
+	line-height: 1em;
+}
+
+#trabajo ul{
+	padding: 2em;
+	text-align: center;
+
+}
+
+#trabajo ul{
+	padding: 2em;
+}
+/* Estilo general para el contenedor de la galería 
+Se utiliza la posición relativa y el z- index para hacer que las imágenes se superpongan. También para crear un efecto zoom en el hover
+utilizando z- index superior para que la imagen aparezca superpuesta.
+
+*/
+.galeria {
+	position: relative;
+	top: 0;
+	left: 0;
+  }
+  
+  .image1 {
+	position: relative;
+	top: 0;
+	left: 0;
+	border: 1px solid #f8f6f6;
+	z-index: 1;
+	transition: transform .2s; 
+	}
+	 
+	.image1:hover {
+		transform: scale(1.5); 
+		z-index: 25;
+	}
+
+  
+  .image2 {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	border: 1px solid #f8f6f6;
+	z-index: 3 ;
+	transition: transform .2s; 
+	}
+	 
+	.image2:hover {
+		transform: scale(1.5); 
+		z-index: 30;
+	}
+   
+
+/* Usamos media queries para la galería según ancho de pantalla para que el diseño sea fluid     */ 
+.section > .galeria {
+	width: 75%;
+	max-width: calc(100% - 4em);
+	margin: 5%;
+}
+
+  /* Estilos específicos para la cuarta sección ( #contacto)  */
+
+#contacto {
+background-color:#7d7a81;
+background-size: 256px 256px, cover;
+background-attachment: fixed, fixed;
+background-position: top left, center center;
+color: #ffffff;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 3em 0 3em 0;
+}
+#contacto h2{
+	font-size: 2em;
+	line-height: 1em;
+}
+
+#contacto img{
+	width: 330px;
+	height: auto;
+}
+
+	#contacto .box {
+		position: relative;
+	}
+
+/* Estilos de formulario */
+
+	form {
+		margin: 0 0 1em 0;
+	}
+
+		form > :last-child {
+			margin-bottom: 0;
+		}
+
+		form > .fields {
+
+			width: calc(100% + 3em);
+			margin: -1em 0 1em -1em;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+
+			form > .fields > .field {
+				padding: 1em 0 0 1em;
+				width: calc(100% - 1.5em);
+			}
+
+
+	label {
+		display: block;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
+	select,
+	textarea {
+		color: #797d80;
+		display: block;
+		width: 100%;
+		padding: 0.65em 0.75em;
+		background: none;
+		border: solid 2px #e5e6e7;
+		color: inherit;
+		border-radius: 0.5em;
+		outline: none;
+	}
+
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		input[type="email"]:focus,
+		input[type="tel"]:focus,
+		input[type="search"]:focus,
+		input[type="url"]:focus,
+		select:focus,
+		textarea:focus {
+			border-color: #0c0e0f;
+		}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
+	select {
+		line-height: 1.35em;
+	}
+
+	
+/* Estilos de botones */
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button,
+button {
+	
+	background-color: #B65D3A;
+	border: 0;
+	border-radius: 3.5em;
+	color: #ffffff;
+	cursor: pointer;
+	display: inline-block;
+	height: 3.5em;
+	line-height: 3.5em;
+	outline: 0;
+	padding: 0 2em 0 2em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+}
+	input[type="button"]:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	.button:hover,
+	button:hover {
+		background-color: #a8cea4;
+	}
+
+	input[type="button"]:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	.button:active,
+	button:active {
+		background-color: #88bc82;
+	}
+
+
+/* Estilos de iconos */
+
+	.icon {
+		text-decoration: none;
+		position: relative;
+		text-decoration: none;
+	}
+	
+/* Estilo de listas  */
+
+	ul.default {
+		list-style: none;
+		padding-left: 1em;
+		display: flex;
+	}
+
+/* Estilos para iconos de RRSS */
+
+	ul.icons {
+		cursor: default;
+		margin-left: 210px;
+		
+	}
+
+		ul.icons li {
+			display: inline-block;
+			
+
+		}
+
+		ul.icons a {
+			display: inline-block;
+			width: 2em;
+			height: 2em;
+			line-height: 2em;
+			text-align: center;
+			border: 0;
+			text-decoration:none;
+			
+		}
+
+/*** Estilos de página "trabajos.html" : en esta página usaremos estilos de GRID  ***/
+
+/*Damos estilo a los contenedores del grid ( galeria-grid) 
+ */
+.galeria-grid {
+	/* Para activar Grid, utilizamos un elemento contenedor (galeria-grid), en el cual incluiremos la opción display: grid
+	GRID: establece una cuadrícula con ítems en bloque, de forma equivalente a block. Permite que la
+    cuadrícula aparezca encima/debajo del contenedor exterior (en bloque)   */
+	display: grid;
+	/*Creamos una cuadrícula con un tamaño concreto usando la propiedad grid-template-columns que sirve para indicar las dimensiones de cada celda,
+	diferenciando entre columnas y filas ( en este caso columnas). 
+	La función REPEAT([número de veces], [tamaño]) nos permite repetir las columnas las veces que sean necesarias.
+	Para definir el número de veces : 
+	    Utilizamos AUTO-FIT (de esta manera si el contenedor tiene un tamaño definido, el número de repeticiones es el
+	    mayor entero positivo que no haga que la cuadrícula se desborde.
+	Para definir el tamaño: 
+	    Utilizamos la función MINMAX() para asegurarnos de que las columnas no quedan muy pequeñas, 
+		Las columnas tendrán ancho flexible, pero con un mínimo de 250 píxeles.
+		Especificamos 1fr para indicar al navegador que distribuya el espacio entra las columnas de forma que cada columna
+		tome un tamaño proporcional de 1 fracción del espacio disponible.
+	*/
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	/* La propiedad GAP especifica los canales entre las filas y las columnas de la cuadrícula.    */
+	gap: 1.3 rem;
+	justify-items: center;
+	margin: 0;
+	padding: 0;
+  }
+  
+  /* Creamos el marco de nuestras imágenes */
+  .galeria-marco {
+	padding: .5rem;
+	font-size: 1.2rem;
+	text-align: center;
+	background-color: #333;
+	color: #d9d9d9;
+  }
+  
+  /* Definimos los estilos para imágenes */
+  .galeria-img {
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	transition: opacity 0.25s ease-in-out;
+  }
+  
+  /* Añadimos efecto de transformación a la imagen en hover */
+  .galeria-img:hover {
+	transform: scale(1.5); 
+	z-index: 30;
+  }
+
+  
